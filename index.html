@@ -248,14 +248,13 @@ body{background:transparent!important}
 @media(max-width:900px){.cards{grid-template-columns:1fr}.scene{aspect-ratio:16/9}}
 @media(prefers-reduced-motion:reduce){.gyro,.stk,.cube{animation:none}}
 
-/* sample cards: one themed revolving object per site */
-.fx{position:relative;width:var(--s);height:var(--s);transform-style:preserve-3d;transform:rotateX(-8deg) rotateY(25deg);animation:fx 16s linear infinite}
-.fx b{position:absolute;inset:0;display:grid;place-items:center;font:800 calc(var(--s)*.85)/1 var(--f);text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px rgba(244,244,242,.85);backface-visibility:hidden;transform:rotateY(calc(var(--n)*360deg/var(--k,8))) translateZ(calc(var(--s)*var(--rad,.95)))}
-.fx b:nth-child(odd){color:#f4f4f2;-webkit-text-stroke:0}
-.fx::after{content:"";position:absolute;inset:calc((var(--rad,.95) - .37)*-100%);border:1px solid rgba(244,244,242,.3);border-radius:50%;transform:rotateX(90deg)}
-@keyframes fx{to{transform:rotateX(-8deg) rotateY(385deg)}}
-.card:hover .fx{animation-duration:6s}
-@media(prefers-reduced-motion:reduce){.fx{animation:none}}
+.smps{margin-top:clamp(28px,3vw,44px)}
+.smp{padding:22px;min-height:clamp(150px,14vw,200px);justify-content:space-between;gap:36px}
+.smp .top{display:flex;justify-content:space-between;align-items:center}
+.smp .tag{border:1px solid var(--line);border-radius:999px;padding:5px 12px;color:var(--mut)}
+.smp .ar{display:inline-block;font-size:20px;transition:transform .5s var(--ease)}.smp:hover .ar{transform:translate(4px,-4px)}
+.smp b{display:block;font-weight:500;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.03em;line-height:1.1}
+.smp p{margin:8px 0 0;color:var(--mut);font-size:14px;overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -305,20 +304,11 @@ body{background:transparent!important}
 
 <section id="work">
   <div class="label meta rv"><span>02 / Some of the sample sites</span><span class="mut">Live links</span></div>
-  <div class="cards rv">
-    <a class="card" href="https://ember-ivory-theta.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Ember &amp; Ivory, view live website">
-      <div class="scene" aria-hidden="true"><div class="fx" style="--k:12;--rad:1.3;animation-direction:reverse"><b style="--n:0">E</b><b style="--n:1">M</b><b style="--n:2">B</b><b style="--n:3">E</b><b style="--n:4">R</b><b style="--n:5">·</b><b style="--n:6">I</b><b style="--n:7">V</b><b style="--n:8">O</b><b style="--n:9">R</b><b style="--n:10">Y</b><b style="--n:11">·</b></div></div>
-      <div class="cb"><span class="meta mut">01</span><b>Ember &amp; Ivory</b><span class="d">Fine-dining restaurant website</span><span class="cta meta">View live <span class="ar">&#8599;</span></span></div>
-    </a>
-    <a class="card" href="https://burger-one-pi.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Stackd, view live website">
-      <div class="scene" aria-hidden="true"><div class="fx" style="--k:7;--rad:0.9;animation-direction:reverse"><b style="--n:0">S</b><b style="--n:1">T</b><b style="--n:2">A</b><b style="--n:3">C</b><b style="--n:4">K</b><b style="--n:5">D</b><b style="--n:6">·</b></div></div>
-      <div class="cb"><span class="meta mut">02</span><b>Stackd</b><span class="d">Burger brand website with a sauce shop, cooking videos and an about section</span><span class="cta meta">View live <span class="ar">&#8599;</span></span></div>
-    </a>
-    <a class="card" href="https://design-two-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Fluxora Collective, view live website">
-      <div class="scene" aria-hidden="true"><div class="fx" style="animation-direction:reverse"><b style="--n:0">F</b><b style="--n:1">L</b><b style="--n:2">U</b><b style="--n:3">X</b><b style="--n:4">O</b><b style="--n:5">R</b><b style="--n:6">A</b><b style="--n:7">·</b></div></div>
-      <div class="cb"><span class="meta mut">03</span><b>Fluxora Collective</b><span class="d">Creator course website with bold type, a course list and a contact form</span><span class="cta meta">View live <span class="ar">&#8599;</span></span></div>
-    </a>
-    <!-- Next sample: copy a card above, change the link, name and description, and number it 04 -->
+  <div class="cards smps rv">
+    <a class="card smp" href="https://ember-ivory-theta.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Ember &amp; Ivory, view live sample website"><span class="top"><span class="meta tag">Sample 01</span><span class="ar">&#8599;</span></span><span><b>Ember &amp; Ivory</b><p>ember-ivory-theta.vercel.app</p></span></a>
+    <a class="card smp" href="https://burger-one-pi.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Stackd, view live sample website"><span class="top"><span class="meta tag">Sample 02</span><span class="ar">&#8599;</span></span><span><b>Stackd</b><p>burger-one-pi.vercel.app</p></span></a>
+    <a class="card smp" href="https://design-two-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Fluxora Collective, view live sample website"><span class="top"><span class="meta tag">Sample 03</span><span class="ar">&#8599;</span></span><span><b>Fluxora Collective</b><p>design-two-alpha.vercel.app</p></span></a>
+    <!-- Next sample: copy a box above, change the link, name and address, and number it 04 -->
   </div>
 </section>
 
