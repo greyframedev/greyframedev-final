@@ -1,0 +1,8 @@
+[33mcommit 1011cd470fed60787fa217455fa91ec997bac7c3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Ojasvi Sharma <ojas0101sharma@gmail.com>
+Date:   Wed Oct 21 01:55:24 2026 +0530
+
+    Boxed sample links
+
+ index.html | 34 [32m++++++++++++[m[31m----------------------[m
+ 1 file changed, 12 insertions(+), 22 deletions(-)

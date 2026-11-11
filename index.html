@@ -431,7 +431,8 @@ var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
 var cv=document.getElementById('chrome'),gl=cv.getContext('webgl',{antialias:false,powerPreference:'low-power'});
 if(gl){
 var vs='attribute vec2 a;void main(){gl_Position=vec4(a,0.,1.);}';
-var fs='precision mediump float;uniform vec2 R;uniform float T;uniform vec2 M;'+
+var hp=gl.getShaderPrecisionFormat&&gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER,gl.HIGH_FLOAT);
+var fs='precision '+(hp&&hp.precision>0?'highp':'mediump')+' float;uniform vec2 R;uniform float T;uniform vec2 M;'+
 'vec2 m;float f(vec2 p){vec2 q=p;for(int i=0;i<5;i++){q+=vec2(sin(q.y*1.35+T*.13+float(i)),cos(q.x*1.15-T*.1+float(i)*1.7))*.5;}'+
 'vec2 d=p-m;return sin(q.x*1.4+q.y)*.6+sin(q.y*2.1-q.x*.7)*.3+1.1*exp(-dot(d,d)*1.4);}'+
 'void main(){float k=min(R.x,R.y);vec2 uv=(gl_FragCoord.xy-.5*R)/k;vec2 p=uv*2.3;m=(M-.5*R)/k*2.3;float e=.012;'+
